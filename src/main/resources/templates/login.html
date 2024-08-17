@@ -1,0 +1,53 @@
+
+<!doctype html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title})}"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>SignUp page</title>
+</head>
+<body>
+	<section id="content">
+
+
+		<div class="card mx-auto mt-10" style="width: 40rem;">
+			<div class="card-body">
+
+
+				<h5 class="card-title">Login Here</h5>
+				<h6 class="card-subtitle mb-2 text-body-secondary">Start
+					managing your contacts on cloud...</h6>
+				<form class="row g-3"  
+					method="post"
+					data-th-action="@{'processingauth'}"
+					>
+
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Email
+								address</label> <input type="email" class="form-control" name="email"
+								id="exampleInputEmail1" aria-describedby="emailHelp" required>
+							<div id="emailHelp" class="form-text" >We'll never share
+								your email with anyone else.</div>
+						</div>
+						<div class="mb-3">
+							<label for="exampleInputPassword1" class="form-label">Password</label>
+							<input type="password" class="form-control" name="password"
+								id="exampleInputPassword1" required>
+						</div>
+						<button type="submit" class="btn btn-primary">Login</button>
+						
+						<button type="reset" class="btn btn-warning">Reset</button>
+
+					<button class="btn btn-dark"><a data-th-href="@{'/oauth2/authorization/google'}">google</a></button>
+					<button class="btn btn-dark"><a data-th-href="@{'/oauth2/authorization/github'}">github</a></button>
+					
+
+				</form>
+
+			</div>
+		</div>
+
+	</section>
+
+</body>
+</html>

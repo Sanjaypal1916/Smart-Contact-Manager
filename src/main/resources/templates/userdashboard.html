@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title})}" xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>dashboard</title>
+</head>
+<body>
+<section id="content">
+
+<h1>welcome to the user dashboard</h1>
+<button class="btn btn-primary"><a data-th-href="@{'/dologout'}">logout</a></button>
+	
+
+</section>
+	
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title})}"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>SignUp page</title>
+</head>
+<body>
+	<section id="content">
+
+
+		<div class="card mx-auto mt-10" style="width: 40rem;">
+			<div class="card-body">
+
+				<!-- message box  -->
+				<div data-th-replace="~{message::messagebox}"></div>
+
+
+
+				<h5 class="card-title">Sign-Up</h5>
+				<h6 class="card-subtitle mb-2 text-body-secondary">Start
+					managing your contacts on cloud...</h6>
+
+
+				<form class="row g-3" data-th-action="@{'/doregister'}"
+					data-th-object="${userform}" method="post" novalidate>
+					<!--  registeration form -->
+					<div class="col-12 mt-4 mb-2 ">
+						<label for="inputname" class="form-label">Username</label> <input
+							type="text" class="form-control" id="inputname"
+							data-th-field="*{name}" placeholder="Enter your name here"
+							required>
+						<div th:if="${#fields.hasErrors('name')}" data-th-errors="*{name}" class="feedback" style="color:red"></div>
+					</div>
+
+					<div class="col-md-6">
+						<label for="inputEmail4" class="form-label">Email</label> <input
+							type="email" class="form-control" id="inputEmail4"
+							data-th-field="*{email}" placeholder="Enter your email-address"
+							required>
+							<div th:if="${#fields.hasErrors('email')}"  data-th-errors="*{email}"class="feedback" style="color:red"></div>
+		
+					</div>
+					<div class="col-md-6">
+						<label for="inputPassword4" class="form-label">New
+							Password</label> <input type="password" class="form-control"
+							data-th-field="*{password}" id="inputPassword4"
+							placeholder="Enter new Password" required>
+							<div th:if="${#fields.hasErrors('password')}"  data-th-errors="*{password}"class="feedback" style="color:red"></div>
+							
+					</div>
+					<div class="col-12">
+						<label for="inputphone" class="form-label">Contact Number</label>
+						<input type="text" class="form-control" id="inputphone"
+							data-th-field="*{contact}" placeholder="Enter Phone-number"
+							required>
+							<div th:if="${#fields.hasErrors('contact')}"  data-th-errors="*{contact}"class="feedback" style="color:red"></div>
+							
+					</div>
+
+					<div class="row-10">
+						<label for="floatingTextarea2" class="mb-2">Write
+							something about yourself</label>
+						<textarea class="form-control" placeholder="Write here"
+							data-th-field="*{about}" id="floatingTextarea2"
+							style="height: 194"></textarea>
+							<div th:if="${#fields.hasErrors('about')}"  data-th-errors="*{about}"class="feedback" style="color:red"></div>
+							
+
+					</div>
+
+					<div class="col-12">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" id="gridCheck"
+								required> <label class="form-check-label"
+								for="gridCheck"> Check me out </label>
+						</div>
+					</div>
+					<div class="col-12 mb-3"
+						style="text-align: center; justify-content: center">
+						<button type="submit" class="btn btn-primary">Sign in</button>
+						<button type="reset" class="btn btn-danger">Reset</button>
+					</div>
+
+					<p class="m-auto"
+						style="color: gray; text-align: center; justify-content: center">OR</p>
+
+
+				</form>
+
+			</div>
+		</div>
+
+	</section>
+
+</body>
+</html>

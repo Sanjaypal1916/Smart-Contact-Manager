@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title})}" xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>userprofile</title>
+</head>
+<body>
+<section id="content">
+
+<h1>welcome to the user profile</h1>
+<button class="btn btn-primary"><a data-th-href="@{'/dologout'}">logout</a></button>
+<!--  h1>
+	<h1 data-th-text="${LoggedInUser.username}"></h1>
+	<h1 data-th-text="${LoggedInUser.useremail}"></h1>
+</h1>
+-->
+</section>
+	
+</body>
+</html>
